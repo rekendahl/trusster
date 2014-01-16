@@ -1,15 +1,15 @@
 #!/bin/sh
 #Copyright (C) 2004 Mike Mintz
 
-#This file is part of the White Toolbox Library.  
+#This file is part of the White Toolbox Library.
 
-ROOT_INCL = -I$(SIMULATOR_HOME)/include  
+ROOT_INCL = -I$(SIMULATOR_HOME)/include
 
 #default directory structure
 SRC = .
 OBJ = .
 LIB = .
-#INCL = 
+#INCL =
 
 
 #add you own options by:
@@ -18,7 +18,7 @@ LIB = .
 #You must define the following
 #STATIC_LIB  = $(LIB)/common.$(SIM).a
 #SRCS = \
-#           $(SRC)/avv_uart.cpp 
+#           $(SRC)/avv_uart.cpp
 
 
 STD_OPT = -Wall $(INCL) $(ROOT_INCL) -I$(TEAL_HOME) -I$(TRUSS_HOME)/inc $(OPT) -DSIMULATOR
@@ -34,7 +34,7 @@ ifeq ($(SIM),ivl)
   CFLAGS =  -Dvpi_2_0 -DSIM=ivl -Divl
 else
 ifeq ($(SIM),ncsim)
-  CFLAGS =  -DSIM=ncsim -Dncsim -Dvpi_2_0 
+  CFLAGS =  -DSIM=ncsim -Dncsim -Dvpi_2_0
 else
 ifeq ($(SIM),vcs)
   CFLAGS =  -DSIM=vcs -Dvcs
@@ -49,7 +49,7 @@ ifeq ($(SIM),cver_2_0)
   CFLAGS =  -DSIM=cver -Dcver -Dvpi_2_0
 else
 ifeq ($(SIM),aldec)
-  CFLAGS =  -DSIM=aldec -Daldec 
+  CFLAGS =  -DSIM=aldec -Daldec
 else
 ifeq ($(SIM),aldec_2_0)
   CFLAGS =  -DSIM=aldec -Daldec -Dvpi_2_0
