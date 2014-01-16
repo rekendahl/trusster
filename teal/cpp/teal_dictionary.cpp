@@ -1,31 +1,31 @@
 /*
 Trusster Open Source License version 1.0a (TRUST)
-copyright (c) 2006 Mike Mintz and Robert Ekendahl.  All rights reserved. 
+copyright (c) 2006 Mike Mintz and Robert Ekendahl.  All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met: 
-   
-  * Redistributions of source code must retain the above copyright notice, 
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice,
     this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright notice, 
-    this list of conditions and the following disclaimer in the documentation 
+  * Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
     and/or other materials provided with the distribution.
-  * Redistributions in any form must be accompanied by information on how to obtain 
+  * Redistributions in any form must be accompanied by information on how to obtain
     complete source code for this software and any accompanying software that uses this software.
-    The source code must either be included in the distribution or be available in a timely fashion for no more than 
-    the cost of distribution plus a nominal fee, and must be freely redistributable under reasonable and no more 
-    restrictive conditions. For an executable file, complete source code means the source code for all modules it 
-    contains. It does not include source code for modules or files that typically accompany the major components 
+    The source code must either be included in the distribution or be available in a timely fashion for no more than
+    the cost of distribution plus a nominal fee, and must be freely redistributable under reasonable and no more
+    restrictive conditions. For an executable file, complete source code means the source code for all modules it
+    contains. It does not include source code for modules or files that typically accompany the major components
     of the operating system on which the executable file runs.
- 
 
-THIS SOFTWARE IS PROVIDED BY MIKE MINTZ AND ROBERT EKENDAHL ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, 
-INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
-OR NON-INFRINGEMENT, ARE DISCLAIMED. IN NO EVENT SHALL MIKE MINTZ AND ROBERT EKENDAHL OR ITS CONTRIBUTORS 
-BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
-OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+
+THIS SOFTWARE IS PROVIDED BY MIKE MINTZ AND ROBERT EKENDAHL ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+OR NON-INFRINGEMENT, ARE DISCLAIMED. IN NO EVENT SHALL MIKE MINTZ AND ROBERT EKENDAHL OR ITS CONTRIBUTORS
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
@@ -115,7 +115,7 @@ std::string teal_scan_plusargs (const std::string& name)
   //  std::cout << " teal_scan_plusargs() for " << name << std::endl;
   char* text = mc_scan_plusargs ((PLI_BYTE8*)name.c_str ());
     if (text) ++text;  //skip the leading +
-    //            std::cout << "teal_scan_plus_args (mc version) for \"" << name << "\" returns " 
+    //            std::cout << "teal_scan_plus_args (mc version) for \"" << name << "\" returns "
     //        	    << (void*)text << std::endl;
   return (text ? text: ""); //could do a scan with acc_fetch_argv, acc_fetch_argc
 }
@@ -138,7 +138,7 @@ bool teal::dictionary::put (const std::string& name, const std::string& value, b
 ///////////////////////////////////////////////////////////////////
 std::string teal::dictionary::find (const std::string& name)
 {
-  std::string arg = teal_scan_plusargs (name); 
+  std::string arg = teal_scan_plusargs (name);
   // std::cout << " for word " << name << " lins is " << lines_[name] << std::endl;
   return (arg != "") ? arg : lines_[name]; //NOTE: will pollute lines_ could have used find(name).
 }
